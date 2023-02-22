@@ -56,4 +56,15 @@
             tools:layout_editor_absoluteY="288dp" />
     </ScrollView>
 
+    <fragment
+        android:name="com.aliif.app1.SimpleFragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/fragment"
+        tools:layout="@layout/simple_fragment"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
