@@ -3,38 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".SimpleFragment"
-    android:orientation="horizontal"
-    android:background="@color/my_fragment_color">
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".SimpleFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/fragment_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/question_article"
         android:padding="4dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        />
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/radio_group"
-        >
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_button_yes"
-            android:layout_marginRight="8dp"
-            android:text="@string/yes"
-            />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radio_button_no"
-            android:layout_marginRight="8dp"
-            android:text="@string/no"
-            />
-    </RadioGroup>
+        android:text="@string/question_article"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
 </LinearLayout>
