@@ -23,10 +23,10 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.aliif.app1.ProductInfo"
+        android:name="com.aliif.app1.ProductBenefit"
         android:layout_width="411dp"
         android:layout_height="484dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="148dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
