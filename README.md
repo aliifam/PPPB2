@@ -1,3 +1,12 @@
-# PPPB2 - Static Fragment
+# Tugas Pekan 2 Fragment Statis & Dinamis
 
-ini adalah branch static fragment pertemuan pekan kedua semester 4 PPPB 2
+```
+Nama : Aliif Arief Maulana
+NIM : 21/479029/Sv/19418
+```
+
+Link Tugas 1 fragment statis : https://github.com/aliifam/PPPB2/tree/tugas-pekan-2-fragment-statis
+
+Link Tugas 2 Fragment dinamis : https://github.com/aliifam/PPPB2/tree/tugas-pekan-2-fragment-dinamis
+
+Link Video presentasi : youtube.com
