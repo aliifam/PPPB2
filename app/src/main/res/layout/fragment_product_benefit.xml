@@ -16,16 +16,17 @@
             android:id="@+id/deskripsi"
             android:layout_width="326dp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
             android:text="Honda PCX160 kini pakai mesin 156,9 cc 4 katup dengan teknologi anyar eSP+. Outputnya paling besar di antara para kompetitor yakni punya tenaga maksimal 15,8 daya kuda pada 8.500 rpm dan torsi puncak 14,7 Nm di 6.500 rpm."
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:fontFamily="@font/montserrat"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="42dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -40,7 +41,9 @@
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.32" />
+            app:layout_constraintVertical_bias="0.32"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="-1dp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -54,7 +57,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.562" />
+            app:layout_constraintVertical_bias="0.562"
+            tools:layout_editor_absoluteX="42dp"
+            tools:layout_editor_absoluteY="109dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
