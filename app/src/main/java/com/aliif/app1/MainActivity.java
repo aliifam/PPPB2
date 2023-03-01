@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment, productBenefit).commit();
 
+
+        button.setText("Mantap");
         isFirst = false;
     }
 
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment, productInfo).commit();
 
+        button.setText("Lihat Kelebihan");
         isFirst = true;
     }
 }
