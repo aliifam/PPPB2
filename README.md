@@ -9,4 +9,4 @@ Link Tugas 1 fragment statis : https://github.com/aliifam/PPPB2/tree/tugas-pekan
 
 Link Tugas 2 Fragment dinamis : https://github.com/aliifam/PPPB2/tree/tugas-pekan-2-fragment-dinamis
 
-Link Video presentasi : youtube.com
+Link Video presentasi : https://youtu.be/ve7EPGgmuoo
