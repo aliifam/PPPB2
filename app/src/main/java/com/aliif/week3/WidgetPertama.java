@@ -6,7 +6,10 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.widget.RemoteViews;
+
+import androidx.annotation.RequiresApi;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -19,6 +22,7 @@ public class WidgetPertama extends AppWidgetProvider {
     private static final String widgetSharePref =  "com.aliif.week3";
     private static final String KEY = "count";
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
