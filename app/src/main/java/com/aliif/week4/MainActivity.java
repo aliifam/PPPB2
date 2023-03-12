@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         tPressure = findViewById(R.id.pressure);
         tAmbient = findViewById(R.id.ambient);
         tMagnetic = findViewById(R.id.magnetic);
-        tHumidity = findViewById(R.id.humidity)
+        tHumidity = findViewById(R.id.humidity);
 
         light = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         proximity = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
@@ -140,6 +140,24 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             case Sensor.TYPE_PRESSURE:
                 tPressure.setText(
                         String.format("Pressure sensor : %1$.2f", currentValue)
+                );
+                changeColor(currentValue);
+                break;
+            case Sensor.TYPE_AMBIENT_TEMPERATURE:
+                tAmbient.setText(
+                        String.format("Ambient sensor : %1$.2f", currentValue)
+                );
+                changeColor(currentValue);
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD:
+                tMagnetic.setText(
+                        String.format("Magnetic sensor : %1$.2f", currentValue)
+                );
+                changeColor(currentValue);
+                break;
+            case Sensor.TYPE_RELATIVE_HUMIDITY:
+                tHumidity.setText(
+                        String.format("Humidity sensor : %1$.2f", currentValue)
                 );
                 changeColor(currentValue);
                 break;
