@@ -31,5 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextView sensorTextView = findViewById(R.id.sensorText);
         sensorTextView.setText(sensorText);
+
+
     }
 }
