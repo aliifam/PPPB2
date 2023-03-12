@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -13,36 +14,42 @@
         android:layout_height="wrap_content"
         android:text="TextView" />
 
-<!--    batas -->
+<!--    batas  list sensor -->
 
     <TextView
         android:id="@+id/light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Light Sensor : %1$.2f" />
 
     <TextView
         android:id="@+id/proximity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Proximity Sensor : %1$.2f" />
 
     <TextView
         android:id="@+id/pressure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Pressure Sensor : %1$.2f" />
 
     <TextView
         android:id="@+id/ambient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Ambient Sensor : %1$.2f" />
 
     <TextView
         android:id="@+id/magnetic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="Magnetic Sensor : %1$.2f" />
+
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Humidity Sensor : %1$.2f" />
 
 </LinearLayout>
