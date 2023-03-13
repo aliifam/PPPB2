@@ -104,17 +104,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         sensorManager.unregisterListener(this);
     }
 
-    protected void changeColor(float f)
-    {
-        LinearLayout linearLayout = findViewById(R.id.background);
-        if(f < 5.00)
-        {
-            linearLayout.setBackgroundColor(Color.BLUE);
-        }else if(f == 5.00)
-        {
-            linearLayout.setBackgroundColor(Color.RED);
+    private void changeColor(float currentValue) {
+        LinearLayout layout = findViewById(R.id.background);
+        if (currentValue >= 20000) {
+            layout.setBackgroundColor(Color.parseColor("#FFACAC"));
+        }else{
+            layout.setBackgroundColor(Color.parseColor("#7DB9B6"));
         }
     }
+
 
     @SuppressLint("DefaultLocale")
     @Override
@@ -135,31 +133,26 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 tProximity.setText(
                         String.format("Proximity sensor : %1$.2f", currentValue)
                 );
-                changeColor(currentValue);
                 break;
             case Sensor.TYPE_PRESSURE:
                 tPressure.setText(
                         String.format("Pressure sensor : %1$.2f", currentValue)
                 );
-                changeColor(currentValue);
                 break;
             case Sensor.TYPE_AMBIENT_TEMPERATURE:
                 tAmbient.setText(
                         String.format("Ambient sensor : %1$.2f", currentValue)
                 );
-                changeColor(currentValue);
                 break;
             case Sensor.TYPE_MAGNETIC_FIELD:
                 tMagnetic.setText(
                         String.format("Magnetic sensor : %1$.2f", currentValue)
                 );
-                changeColor(currentValue);
                 break;
             case Sensor.TYPE_RELATIVE_HUMIDITY:
                 tHumidity.setText(
                         String.format("Humidity sensor : %1$.2f", currentValue)
                 );
-                changeColor(currentValue);
                 break;
         }
     }
