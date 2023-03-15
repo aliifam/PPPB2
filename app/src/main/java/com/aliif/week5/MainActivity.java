@@ -59,15 +59,76 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onStart() {
         super.onStart();
+
+        if (accelerometer != null) {
+            sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+        }
+
+        if (magnetometer != null) {
+            sensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_NORMAL);
+        }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+        sensorManager.unregisterListener(this);
     }
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
+
+        int sensorType = sensorEvent.sensor.getType();
+
+        switch (sensorType){
+            case Sensor.TYPE_ACCELEROMETER:
+                accelerometerData = sensorEvent.values.clone();
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD:
+                magnetometerData = sensorEvent.values.clone();
+                break;
+            default:
+                return;
+        }
+
+        float[] rotationMatrix = new float[9];
+        SensorManager.getRotationMatrix(rotationMatrix, null, accelerometerData, magnetometerData);
+
+        float[] orientationValues = new float[3];
+        SensorManager.getOrientation(rotationMatrix, orientationValues);
+
+        float azimuth = orientationValues[0];
+        float pitch = orientationValues[1];
+        float roll = orientationValues[2];
+
+        spotRight.setAlpha(0f);
+        spotTop.setAlpha(0f);
+        spotBottom.setAlpha(0f);
+        spotLeft.setAlpha(0f);
+
+        if(Math.abs(pitch) < VALUE_DRIFT){
+            pitch = 0;
+        }
+
+        if(Math.abs(roll) < VALUE_DRIFT){
+            roll = 0;
+        }
+
+        if(pitch > 0){
+            spotBottom.setAlpha(pitch);
+        }else {
+            spotBottom.setAlpha(Math.abs(pitch));
+        }
+
+        if(roll > 0){
+            spotLeft.setAlpha(roll);
+        }else {
+            spotLeft.setAlpha(Math.abs(roll));
+        }
+
+        textAzimuth.setText(getResources().getString(R.string.value_format, azimuth));
+        textPitch.setText(getResources().getString(R.string.value_format, pitch));
+        textRoll.setText(getResources().getString(R.string.value_format, roll));
 
     }
 
