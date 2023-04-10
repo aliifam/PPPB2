@@ -117,14 +117,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if(pitch > 0){
             spotBottom.setAlpha(pitch);
         }else {
-            spotBottom.setAlpha(Math.abs(pitch));
+            spotTop.setAlpha(Math.abs(pitch));
         }
 
         if(roll > 0){
             spotLeft.setAlpha(roll);
         }else {
-            spotLeft.setAlpha(Math.abs(roll));
+            spotRight.setAlpha(Math.abs(roll));
         }
+
 
         textAzimuth.setText(getResources().getString(R.string.value_format, azimuth));
         textPitch.setText(getResources().getString(R.string.value_format, pitch));
