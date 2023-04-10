@@ -9,15 +9,23 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView inputText;
+    TextView price;
+
+    Button submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +41,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Date expired = new Date();
-        long expiredDate = expired.getTime() + TimeUnit.DAYS.toMillis(3);
-        expired.setTime(expiredDate);
+        inputText = findViewById(R.id.input_text);
+        price = findViewById(R.id.total_price);
+        submit = findViewById(R.id.btn_submit);
 
-        String formDate = DateFormat.getDateInstance().format(expired);
-        TextView expiredText = findViewById(R.id.date);
-        expiredText.setText(formDate);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int harga = Integer.parseInt(inputText.getText().toString());
+                int totalHarga = harga*100;
+
+                // get the current locale
+                Locale current = getResources().getConfiguration().locale;
+                // get the currency format for the current locale
+                String format = NumberFormat.getCurrencyInstance(current).format(totalHarga);
+                price.setText(format);
+            }
+        });
+
+//        String formDate = DateFormat.getDateInstance().format(expired);
+//        TextView expiredText = findViewById(R.id.date);
+//        expiredText.setText(formDate);
     }
 
     private void showHelp()
@@ -61,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(id == R.id.action_help)
         {
-            Intent intent = new Intent(this, HelpActivity.class);
+            Intent intent = new Intent( this, HelpActivity.class);
             startActivity(intent);
             return true;
         }else if(id == R.id.action_language)
