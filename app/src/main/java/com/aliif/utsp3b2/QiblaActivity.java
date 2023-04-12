@@ -1,39 +1,80 @@
 package com.aliif.utsp3b2;
 
+import static android.view.View.GONE;
+import static android.view.View.INVISIBLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
-public class QiblaActivity extends AppCompatActivity implements SensorEventListener {
+public class QiblaActivity extends AppCompatActivity {
 
-    private static SensorManager sensorManager;
-    private static Sensor sensor;
-    private float currentDegree;
-    ImageView compass;
+    private static final String TAG = "QiblaActivity";
+
+    private Compass compass;
+
+    private RelativeLayout arrowViewQibla;
+    private ImageView arrowImageQibla;
+
+    private float currentAzimuth;
+    SharedPreferences sharedPreferences;
+    GPSTracker gpsTracker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qibla);
 
-        sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+
+        arrowViewQibla = findViewById(R.id.main_image_qiblat);
+
+        gpsTracker = new GPSTracker(this);
+
+        arrowImageQibla = findViewById(R.id.main_image_dial);
+
+        arrowViewQibla.setVisibility(INVISIBLE);
+        arrowViewQibla.setVisibility(GONE);
 
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
-
+    protected void onStart() {
+        super.onStart();
+        if (compass == null) {
+            compass.start();
+        }
     }
 
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int i) {
-
+    protected void onStop()
+    {
+        super.onStop();
+        if (compass != null) {
+            compass.stop();
+        }
     }
+
+    protected void onPause() {
+        super.onPause();
+        if (compass != null) {
+            compass.stop();
+        }
+    }
+
+    protected void onResume() {
+        super.onResume();
+        if (compass == null) {
+            compass.start();
+        }
+    }
+
+    private void setupCompass()
+    {
+        Boolean permission_granted = GetB
+    }
+
 }

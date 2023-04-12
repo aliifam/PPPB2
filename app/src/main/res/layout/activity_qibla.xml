@@ -6,4 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".QiblaActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/main_image_dial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="Qibla Direction"
+            android:src="@drawable/ic_qibla_satu" />
+
+        <RelativeLayout
+            android:id="@+id/main_image_qiblat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_qibla_tiga"
+                android:layout_alignParentTop="true"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/main_image_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="Qibla Direction"
+            android:src="@drawable/ic_qibla_dua" />
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
