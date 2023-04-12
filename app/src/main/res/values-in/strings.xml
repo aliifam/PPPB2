@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">utsp3b2</string>
     <string name="title_activity_maps">Peta Aktifitas</string>
+    <string name="arah_kiblat">Arah Kiblat</string>
+    <string name="lokasi_sekarang">Lokasi Sekarang</string>
+    <string name="action_language">Ganti Bahasa</string>
 </resources>

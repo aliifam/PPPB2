@@ -3,4 +3,10 @@
     <string name="title_activity_maps">MapsActivity</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="arah_kiblat">Kiblat Direction</string>
+    <string name="lokasi_sekarang">Current Location</string>
+    <string name="action_language">Change Language</string>
 </resources>
